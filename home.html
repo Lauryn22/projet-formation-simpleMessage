@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <link rel="stylesheet" href="style/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Flex:opsz,wght@8..144,100;8..144,300;8..144,500;8..144,700;8..144,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+        <div class="main">
+            <nav>
+
+                <a href="#" class="nav-icon" aria-label="visit homepage" aria-current="page">
+                  <img src="ressources/chat.svg" alt="chat icon">
+                  <span>SimpleMessage</span>
+                </a>
+
+                <div class="main-navlinks">
+                  <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </button>
+                  <div class="navlinks-container">
+                    <a href="#" aria-current="page">Home</a>
+                    <a href="#">Contacter notre Equipe</a>
+                  </div>
+                </div>
+              <div class="nav-authentication">
+                <a href="#" class="sign-user" aria-label="Sign in page">
+                  <img src="ressources/user.svg" alt="user-icon">
+                </a>
+                <div class="sign-btns">
+                  <button type="button"><a href="signin.html">Se connecter</a></button>
+                  <button type="button"><a href="signup.html">S'inscrire</a></button>
+                </div>
+                
+              </div>
+            </nav>
+
+            <div class="container">
+                
+                <div class="leftSide">
+                    <div class="leftSide-content">
+                        <h1 class="titlePrincipal">SimpleMessage est votre OUTIL numérique</h1>
+                        <p>SimpleMessage est un outil qui permet à votre équipe d'échanger des 
+                          données d'une manière plus simple et efficace.</p>
+                          <p class="pCompte">Pour utiliser cet outil, veuillez <button><a href="#">créer votre compte </a></button></p>
+                    </div>
+                </div>
+                <div class="rightSide">
+                  <div class="rightSide-content">
+                    <div class="imgRight">
+                      <img src="ressources/screen-capture.png" alt="">
+                    </div>
+                </div>
+                </div>
+            </div>
+
+      </div>
+
+
+    
+
+    <script src="home.js"></script>
+  </body>
+</html>
