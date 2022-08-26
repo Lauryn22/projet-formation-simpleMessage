@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/signup.css">
+    <title>S'inscrire</title>
+</head>
+<body>
+    <header></header>
+    <div class="main">
+        <div class="container">
+            <h2>S'incrire</h2>
+            <div class="box">
+                <div class="inputBox">
+                    <input type="text" id="name" placeholder="Nom Complet" >
+                    <input type="email" id="email" placeholder="Email" >
+                    <input type="password" id="pswrd" placeholder="Password" onkeyup="checkPassword(this.value)">
+                        <span id="toggleBtn"></span> 
+                </div>
+                    <div class="validation">
+        
+                        <ul>
+                            <li id="lower">Au moins une lettre miniscule</li>
+                            <li id="upper">Au moins une lettre majuscule</li>
+                            <li id="number">Au moins un chiffre</li>
+                            <li id="special">Au moins un caractère spécial</li>
+                            <li id="length">Au moins 8 charactères</li>
+                        </ul>
+                       
+                    </div>
+                
+            </div>
+            <button>S'inscrire</button>
+            <h3>Vous avez déjà un compte ? <span><a href="signin.html">Log in</a></span></h3>
+        </div>
+    </div>
+    <footer><h3><span>M2i</span> Formation 2022</h3></footer>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script>
+        let pswd = document.getElementById('pswrd');
+        let toggleBtn = document.getElementById('toggleBtn');
+
+        let lowerCase = document.getElementById('lower');
+        let upperCase = document.getElementById('upper');
+        let digit = document.getElementById('number');
+        let specialChar = document.getElementById('special');
+        let minLength = document.getElementById('length');
+
+        function checkPassword(data) {
+            // javascript regular expression pattern
+            const lower = new RegExp('(?=.*[a-z])');
+            const upper = new RegExp('(?=.*[A-Z])');
+            const number = new RegExp('(?=.*[0-9])');
+            const special = new RegExp('(?=.*[!@#\$%\^&\*])');
+            const length = new RegExp('(?=.{8,})');
+
+            // Lower case validation check
+            if (lower.test(data)) {
+                lowerCase.classList.add('valid');
+            } else {
+                lowerCase.classList.remove('valid'); 
+            }
+
+            // upper case validation check
+            if (upper.test(data)) {
+                upperCase.classList.add('valid');
+            } else {
+                upperCase.classList.remove('valid'); 
+            }
+
+            // number case validation check
+            if (number.test(data)) {
+                digit.classList.add('valid');
+            } else {
+                digit.classList.remove('valid'); 
+            }
+
+            // special character case validation check
+            if (special.test(data)) {
+                specialChar.classList.add('valid');
+            } else {
+                specialChar.classList.remove('valid'); 
+            }
+
+            // minimum lenght case validation check
+            if (length.test(data)) {
+                minLength.classList.add('valid');
+            } else {
+                minLength.classList.remove('valid'); 
+            }
+
+            
+        }
+
+        // show hide password
+        toggleBtn.onclick = function() {
+            if (pswd.type === 'password') {
+                pswrd.setAttribute('type', 'text');
+                toggleBtn.classList.add('hide');
+            } else {
+                pswrd.setAttribute('type', 'password');
+                toggleBtn.classList.remove('hide');
+            }
+        }
+    </script>
+</body>
+</html>

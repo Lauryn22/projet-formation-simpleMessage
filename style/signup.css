@@ -29,7 +29,7 @@ header, footer {
     align-items: center;
     background: #fafafa;
     Width: 100%;
-   height: calc(100vh - 120px);
+    height: calc(100vh - 120px);
    
 }
 
@@ -40,8 +40,8 @@ header, footer {
     justify-content: center;
     width: 400px;
     border: 1px solid #b1b1b8;
-    gap: 45px;
-    height: 450px;
+    gap: 30px;
+    height: 600px;
     background: #ffffff;
 }
 
@@ -64,54 +64,107 @@ header, footer {
 }
 
 .inputBox {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
     position: relative;
     width: 250px;
 }
 
-.inputBox input {
+
+
+
+
+
+
+
+
+
+.box {
+    position: relative;
+    width: 300px;
+}
+
+.box .inputBox {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.box .inputBox input {
+    position: relative;
     width: 100%;
     padding: 10px;
     border: 1px solid #b1b1b8;
     border-radius: 5px;
-    outline: none;
     color: black;
     font-size: 1em;
-    transition: 0.5s;
 }
 
-.inputBox span {
+.box .inputBox #toggleBtn {
     position: absolute;
-    left: 0;
+    top: 123px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: #fafafa;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.box .inputBox #toggleBtn::before {
+    content: url('../resources/eye-outline.svg');
+    width: 23px;
+    height: 23px; 
+}
+
+.box .inputBox #toggleBtn.hide::before {
+    content: url('../resources/eye-off-outline.svg');
+    width: 23px;
+    height: 23px; 
+}
+
+.validation {
+    background: #3e586ed4;
     padding: 10px;
-    pointer-events: none;
-    font-size: 1em;
-    color: rgba(255,255,255,0.25);
-    text-transform: uppercase;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.validation ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.validation ul li {
+    position: relative;
+    list-style: none;
+    color: #fff;
+    font-size: 0.85em;
     transition: 0.5s;
 }
 
-.inputBox input:valid ~ span,
-.inputBox input:focus ~ span {
-    color: #00dfc4; 
-    transform: translateX(10px) translateY(-7px);
-    font-size: 0.65em;
-    padding: 0 10px;
-    background: #1d2b3a;
-    border-left: 1px solid #00dfc4;
-    border-right: 1px solid #00dfc4;
-    letter-spacing: 0.2em;
+.validation ul li::before {
+    color: rgba(255,255,255,0.5);
 }
 
-.inputBox:nth-child(2) input:valid ~ span,
-.inputBox:nth-child(2) input:focus ~ span {
-    background: #00dfc4;
-    color: #1d2b3a;
-    border-radius: 2px;
+.validation ul li::before {
+    content: url('../resources/stop-circle-outline.svg');
+    bottom: 10px;
+    width: 20px;
+    display: inline-flex;
 }
 
-.inputBox input:valid,
-.inputBox input:focus {
-    border: 1px solid #00dfc4;
+.validation ul li.valid::before {
+    content: url('../resources/checkmark-outline.svg');
+    width: 20px;
 }
 
 button {
